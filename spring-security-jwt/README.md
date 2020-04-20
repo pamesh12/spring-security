@@ -66,22 +66,22 @@ Below dependencies will be required for the project
 
 <!-- JWT dependencies start -->
 <dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-api</artifactId>
-			<version>${jwt.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-impl</artifactId>
-			<version>${jwt.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-jackson</artifactId> 
-			<version>${jwt.version}</version>
-			<scope>runtime</scope>
-		</dependency>
+	<groupId>io.jsonwebtoken</groupId>
+	<artifactId>jjwt-api</artifactId>
+	<version>${jwt.version}</version>
+</dependency>
+<dependency>
+	<groupId>io.jsonwebtoken</groupId>
+	<artifactId>jjwt-impl</artifactId>
+	<version>${jwt.version}</version>
+	<scope>runtime</scope>
+</dependency>
+<dependency>
+	<groupId>io.jsonwebtoken</groupId>
+	<artifactId>jjwt-jackson</artifactId> 
+	<version>${jwt.version}</version>
+	<scope>runtime</scope>
+</dependency>
 <!-- JWT dependencies end-->
 ````
 
@@ -266,15 +266,15 @@ public Claims parseJWT(String token) {
 
 ## Build Application
 
-To build application, run below command
+To build application, run below command  
 `mvn clean install`
 
 ## Run Application
-Execute below command to run the application
+Execute below command to run the application  
 `java -jar spring-security-jwt-1.0.0.jar`
 
 ## Test Application
-* Execute login request.
+* Execute login request.  
 `curl --location --request POST 'localhost:8080/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -283,7 +283,8 @@ Execute below command to run the application
 }'
 `
 If request is success, token will be given in response header.
-* Execute `/hello` endpoint with jwt header.
+
+* Execute `/hello` endpoint with jwt header.  
 `curl --location --request GET 'localhost:8080/hello' \
 --header 'Authorization: Bearer <jwt-token>'`
 
